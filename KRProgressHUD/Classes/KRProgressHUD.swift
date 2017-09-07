@@ -91,8 +91,8 @@ public final class KRProgressHUD {
 
    let viewAppearance = KRProgressHUDAppearance()
 
-   let window = UIWindow(frame: UIScreen.main.bounds)
-   let hudViewController = KRProgressHUDViewController()
+   var window = UIWindow(frame: UIScreen.main.bounds)
+   var hudViewController = KRProgressHUDViewController()
 
    let hudView = UIView()
    let iconView = UIView()

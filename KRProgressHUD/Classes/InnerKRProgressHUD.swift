@@ -147,10 +147,11 @@ extension KRProgressHUD {
          }, completion: { _ in
             self.appWindow?.makeKeyAndVisible()
             self.appWindow = nil
-            self.window.isHidden = true
-            self.hudViewController.view.removeFromSuperview()
             self.presentingViewController = nil
-            self.activityIndicatorView.stopAnimating()
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.hudViewController.view.removeFromSuperview()
+            self.hudViewController = KRProgressHUDViewController()
+            self.configureProgressHUDView()
             KRProgressHUD.isVisible = false
             completion?()
          })
